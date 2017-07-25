@@ -5,8 +5,6 @@ mongoose.connect('mongodb://localhost/library');
 var schema = mongoose.Schema;
 var ObjectId = schema.ObjectId;
 
-
-
 var books = new schema({
   _id:ObjectId,
   isbn: String,

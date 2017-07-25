@@ -8,7 +8,7 @@ var app = express();
 
 mongoose.connect('mongodb://localhost/library');
 
-app.use(morgan('combined'));
+app.use(morgan('dev'));
 app.use(bodyParser.json());
 app.use(bodyParser.urlencoded({extended: true}))
 
