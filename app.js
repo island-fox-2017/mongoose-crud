@@ -13,6 +13,7 @@ const express = require('express'),
       routes = require('./routes/index'),
       books = require('./routes/books'),
       customer = require('./routes/customer'),
+      transaction = require('./routes/transaction'),
 
       //Express Instance
       app = express();
@@ -28,6 +29,7 @@ app.use(cookieParser());
 app.use('/', routes);
 app.use('/books', books);
 app.use('/customer', customer);
+app.use('/transaction', transaction);
 
 // catch 404 and forward to error handler
 app.use((req, res, next) => {
