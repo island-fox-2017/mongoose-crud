@@ -12,6 +12,6 @@ let customerSchema = new Schema(
   phone: String
 });
 
-let Customer = mongoose.model('customers', customerSchema);
+let Customer = mongoose.model('Customer', customerSchema);
 
 module.exports = Customer;

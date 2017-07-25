@@ -1,12 +1,13 @@
 'use strict'
 
 const Transaction = require('../models/Transaction');
-const Book = require('../models/Book');
-const Customer = require('../models/Customer');
 
 let findAll = (req, res) => {
   Transaction.find({})
-  .then(result => res.send(result))
+  .populate('booklist')
+  .then(result => {
+    res.render('transaction', { datas: result })
+  })
   .catch(err => res.send(err))
 }
 

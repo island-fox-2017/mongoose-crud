@@ -12,9 +12,10 @@ const Transaction = require('./routers/transaction');
 const mongoose = require('mongoose');
 mongoose.connect('mongodb://localhost/library');
 
+app.set('view engine', 'ejs');
+
 app.use(bodyParser.urlencoded( { extended: true } ));
 app.use(bodyParser.json());
-app.use('view engine', 'ejs')
 
 app.use('/', Index);
 app.use('/book', Book);

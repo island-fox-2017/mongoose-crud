@@ -14,6 +14,6 @@ let transactionSchema = new Schema(
   booklist: [{ type: Schema.Types.ObjectId, ref: 'Book' }]
 })
 
-let Transaction = mongoose.model('transactions', transactionSchema)
+let Transaction = mongoose.model('Transaction', transactionSchema)
 
 module.exports = Transaction;
