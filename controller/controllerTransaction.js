@@ -4,8 +4,10 @@ const Transaction = require('../models/Transaction');
 
 function getAllTransactions(req,res){
   Transaction.find({})
+  .populate('booklist')
   .then(rows =>{
     res.send(rows)
+    // res.render('transaction', {data:rows})
   })
   .catch(err =>{
     res.status(500).send(err)

@@ -14,6 +14,7 @@ app.use(bodyParser.urlencoded({ extended:true }));
 app.use(bodyParser.json());
 app.use(bodyParser.json({ type: 'application/*+json' }))
 app.use(bodyParser.json({type: 'application/x-www-form-urlencoded'}))
+app.set('view engine', 'ejs');
 
 app.get('/', function(req,res){
   res.send('hai ini mongoose')
