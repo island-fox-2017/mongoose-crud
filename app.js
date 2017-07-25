@@ -7,12 +7,12 @@ var logger = require('morgan');
 require('dotenv').config()
 
 var mongoose = require('mongoose')
-mongoose.connect('mongodb://localhost/library')
-var db = mongoose.connection;
-db.on('error', console.error.bind(console, 'connection error: '));
-db.once('open', function(){
-  console.log('We are connected now');
-  // res.send('We are connected now');
+mongoose.connect('mongodb://localhost/library', (err) => {
+  if(!err){
+    console.log('We are connected now');
+  } else {
+    console.log(err);
+  }
 })
 
 const index = require('./routes/index');
