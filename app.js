@@ -18,6 +18,7 @@ mongoose.connect('mongodb://localhost/library', (err) => {
 const index = require('./routes/index');
 const users = require('./routes/users');
 const books = require('./routes/books');
+const customers = require('./routes/customers');
 
 
 // view engine setup
@@ -33,6 +34,7 @@ app.use(express.static(path.join(__dirname, 'public')));
 app.use('/', index);
 app.use('/users', users);
 app.use('/api/books', books);
+app.use('/api/customers', customers);
 
 // catch 404 and forward to error handler
 app.use(function(req, res, next) {
