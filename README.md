@@ -10,7 +10,7 @@ List of basic routes:
 | ------------- |:-------------:| ----------------:|
 | /    | GET           | Print hai     |
 
-List of user routes:
+List of book routes:
 
 | Route             | HTTP          | Description      |
 | -------------     |:-------------:| :----------------|
@@ -19,11 +19,21 @@ List of user routes:
 | /book         |POST           | Create a book|
 | /book/:id      |DELETE         | Delete a book|
 | /book/:id      |PUT            | Update a book with new info |
+
+List of customer routes:
+
+| Route             | HTTP          | Description      |
+| -------------     |:-------------:| :----------------|
 | /customer          |GET            | Get all the customer info    |
 | /customer/:id      |GET            | Get a single customer info     |
 | /customer         |POST           | Create a customer|
 | /customer/:id      |DELETE         | Delete a customer|
 | /customer/:id      |PUT            | Update a customer with new info |
+
+List of transaction routes:
+
+| Route             | HTTP          | Description      |
+| -------------     |:-------------:| :----------------|
 | /transaction          |GET            | Get all the transaction info    |
 | /transaction/:id      |GET            | Get a single transaction info     |
 | /transaction         |POST           | Create a transaction|
