@@ -5,6 +5,28 @@
     <title></title>
   </head>
   <body>
-    <%= data%>
+    <table border="1">
+      <thead>
+        <tr>
+          <td>No</td>
+          <td>Member Id</td>
+          <td>Book List</td>
+        </tr>
+      </thead>
+      <tbody>
+        <% var i = 1%>
+        <%data.forEach(dat =>{%>
+          <tr>
+            <td><%= i %></td>
+            <td><%= dat.memberid %></td>
+            <td>
+              <ol><% dat.booklist.forEach(list=>{%>
+              <li><%=list.title%></li>
+            <%})%></ol>
+          </td>
+          </tr>
+        <%})%>
+      </tbody>
+    </table>
   </body>
 </html>
