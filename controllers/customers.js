@@ -22,14 +22,8 @@ let selectCustomersById = (req, res) => {
 }
 
 let insertCustomers = (req, res) => {
-  var customer = new Model.customersModel({
-    name: req.body.name,
-    memberid: req.body.memberid,
-    address: req.body.address,
-    zipcode: req.body.zipcore,
-    phone: req.body.phone 
-  })
-  customer.save( (err, data) => {
+  // var customer = new Model.customersModel(req.body)
+  Model.customersModel.create(req.body, (err, data) => {
     if(!err){
       res.send(data)
     }else{

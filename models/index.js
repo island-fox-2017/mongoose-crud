@@ -6,7 +6,6 @@ var schema = mongoose.Schema;
 var ObjectId = schema.ObjectId;
 
 var books = new schema({
-  _id:ObjectId,
   isbn: String,
   title: String,
   author: String,
@@ -16,7 +15,6 @@ var books = new schema({
 
 
 var customers = new schema({
-  _id: ObjectId,
   name: String,
   memberid:String,
   address: String,
@@ -24,11 +22,28 @@ var customers = new schema({
   phone: String 
 })
 
+var transactions = new schema({
+  memberid: [{
+    type: schema.Types.ObjectId,
+    ref: 'Customer'
+  }],
+  days: Number,
+  out_date: Date,
+  due_date: Date,
+  in_date: Date,
+  fine: Number,
+  booklist: [{
+    type: schema.Types.ObjectId,
+    ref: 'Book'
+  }] 
+})
+
 var booksModel = mongoose.model('Book', books);
 var customersModel = mongoose.model('Customer', customers);
-
+var transactionsModel = mongoose.model('Transaction', transactions);
 
 module.exports = {
   booksModel,
-  customersModel
+  customersModel,
+  transactionsModel
 }

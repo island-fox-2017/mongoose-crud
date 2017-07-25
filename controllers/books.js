@@ -21,6 +21,8 @@ let selectBooksById = (req, res) => {
 }
 
 let insertBooks = (req, res) => {
+  console.log('test');
+  console.log(req.body);
   Model.booksModel.create({
     isbn: req.body.isbn,
     title: req.body.title,
