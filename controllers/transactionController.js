@@ -6,8 +6,8 @@ let findAll = (req, res) => {
   Transaction.find({})
   .populate('booklist')
   .then(result => {
-    res.send(result)
-    // res.render('transaction', { datas: result })
+    // res.send(result)
+    res.render('transaction', { datas: result })
   })
   .catch(err => res.send(err))
 }
