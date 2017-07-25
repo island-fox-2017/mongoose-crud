@@ -49,7 +49,9 @@ let deleteBooks = (req, res) => {
 }
 
 let updateBooks = (req, res) => {
-  Model.booksModel.findOneAndUpdate(req.params.id, { $set: {
+  Model.booksModel.findOneAndUpdate({
+    _id: req.params.id
+  }, { $set: {
     isbn: req.body.isbn,
     title: req.body.title,
     author: req.body.author,
