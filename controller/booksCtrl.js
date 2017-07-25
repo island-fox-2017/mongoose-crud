@@ -14,6 +14,7 @@ exports.insert = (req, res) => {
 
 // read
 exports.findAll = (req, res) => {
+  console.log('log di read');
   Books.find({}, (err, r) => {
     if (!err) res.send(r);
     else res.status(500).send(err)
