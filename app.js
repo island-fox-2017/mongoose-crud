@@ -19,6 +19,7 @@ const index = require('./routes/index');
 const users = require('./routes/users');
 const books = require('./routes/books');
 const customers = require('./routes/customers');
+const transactions = require('./routes/transactions');
 
 
 // view engine setup
@@ -35,6 +36,7 @@ app.use('/', index);
 app.use('/users', users);
 app.use('/api/books', books);
 app.use('/api/customers', customers);
+app.use('/api/transactions', transactions);
 
 // catch 404 and forward to error handler
 app.use(function(req, res, next) {
