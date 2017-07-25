@@ -14,4 +14,6 @@ app.use('/books',books)
 var customers = require('./routers/customers')
 app.use('/customers',customers)
 
+var transactions = require('./routers/transactions')
+app.use('/transactions',transactions)
 app.listen(3000)
