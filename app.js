@@ -12,6 +12,7 @@ const express = require('express'),
       //All Route Files
       routes = require('./routes/index'),
       books = require('./routes/books'),
+      customer = require('./routes/customer'),
 
       //Express Instance
       app = express();
@@ -26,6 +27,7 @@ app.use(cookieParser());
 
 app.use('/', routes);
 app.use('/books', books);
+app.use('/customer', customer);
 
 // catch 404 and forward to error handler
 app.use((req, res, next) => {
