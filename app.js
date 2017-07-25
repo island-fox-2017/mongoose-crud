@@ -7,6 +7,7 @@ const mongoose = require('mongoose');
 mongoose.connect('mongodb://localhost/mongoose-crud')
 
 const book = require('./routers/book')
+const customer = require('./routers/customer')
 
 
 app.use(bodyParser.urlencoded({ extended:true }));
@@ -19,6 +20,7 @@ app.get('/', function(req,res){
 })
 
 app.use('/book', book)
+app.use('/customer', customer)
 
 
 app.listen(3000)

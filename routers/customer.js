@@ -2,7 +2,7 @@
 
 const express = require('express');
 const router = express.Router();
-const controller = require('../')
+const controller = require('../controller/controllerCustomers')
 
 router.get('/', controller.getAllCustomer);
 router.get('/:id', controller.findOneCustomer);
