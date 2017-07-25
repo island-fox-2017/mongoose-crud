@@ -10,9 +10,11 @@ var app = express();
 
 mongoose.connect('mongodb://localhost/library');
 
+app.set('view engine', 'ejs');
 app.use(morgan('dev'));
 app.use(bodyParser.json());
 app.use(bodyParser.urlencoded({extended: true}))
+
 
 app.use('/api', books)
 app.use('/api', customers)

@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <title>transactions</title>
+  </head>
+  <body>
+    <h1>Library Transactions</h1>
+    <table border="1">
+      <tr>
+        <th>No</th>
+        <th>Days</th>
+        <th>Out Date</th>
+        <th>Due Date</th>
+        <th>In Date</th>
+        <th>Fine</th>
+        <th>Booklist</th>
+        <th>Member id</th>
+      </tr>
+      <% var i = 1 %>
+      <% data_transactions.forEach( dt => { %>
+        <tr>
+          <td><%= i %></td>
+          <td><%= dt.days %></td>
+          <td><%= dt.out_date %></td>
+          <td><%= dt.due_date %></td>
+          <td><%= dt.in_date %></td>
+          <td><%= dt.fine %></td>
+          <td><%= dt.booklist %></td>
+          <td><%= dt.memberid %></td>
+        </tr>  
+      <% }) %>
+    </table>
+  </body>
+</html>

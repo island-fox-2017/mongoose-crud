@@ -6,7 +6,8 @@ let selectAllTransactions = (req, res) => {
   .populate({path:"memberid", select: "name"})
   .exec( (err, data) => {
     if(!err) {
-      res.send(data)
+      // res.send(data)
+      res.render('transactions', {data_transactions : data})
       console.log(data);
     }else{
       res.status(500).send(err)
