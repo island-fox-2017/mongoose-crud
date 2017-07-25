@@ -2,7 +2,7 @@
 
 ## My Mongoose CRUD App
 
-Aplikasi ini merupakan aplikasi database library dengan fitur many to many CRUD sederhana menggunakan database mongoDB.
+Aplikasi ini merupakan aplikasi database library dengan fitur many to many CRUD sederhana menggunakan database mongoDB dan ODM mongoose.
 
 
 ##### List of books routes:
