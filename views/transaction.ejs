@@ -10,16 +10,18 @@
         <th>Member ID</th>
         <th>Book List</th>
       </tr>
-      <tr>
-        <td><%= datas[0].memberid %></td>
-        <td>
-        <ol>
-          <% datas[0].booklist.forEach( book => { %>
-          <li><%= book.title %></li>
-          <% }) %>
-        </ol>
-        </td>
-      </tr>
+      <% datas.forEach( data => { %>
+        <tr>
+          <td><%= data.memberid %></td>
+          <td>
+          <ol>
+            <% data.booklist.forEach( book => { %>
+            <li><%= book.title %></li>
+            <% }) %>
+          </ol>
+          </td>
+        </tr>
+      <% }) %>
     </table>
   </body>
 </html>

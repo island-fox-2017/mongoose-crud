@@ -6,7 +6,8 @@ let findAll = (req, res) => {
   Transaction.find({})
   .populate('booklist')
   .then(result => {
-    res.render('transaction', { datas: result })
+    res.send(result)
+    // res.render('transaction', { datas: result })
   })
   .catch(err => res.send(err))
 }
@@ -16,19 +17,6 @@ let findOne = (req, res) => {
   .then(result => res.send(result))
   .catch(err => res.send(err))
 }
-
-// let createOne = (req, res) => {
-//   Transaction.create(
-//   {
-//     memberid: req.body.memberid,
-//     days: req.body.days,
-//     out_date: req.body.out_date,
-//     due_date: req.body.due_date,
-//     in_date: req.body.in_date,
-//     fine: req.body.fine,
-//     booklist: [{ type: Schema.Types.ObjectId, ref: 'Book' }]
-//   })
-// }
 
 let createOne = (req, res) => {
   Transaction.create(
@@ -70,7 +58,7 @@ let updateOne = (req, res) => {
       due_date: req.body.due_date,
       in_date: req.body.in_date,
       fine: req.body.fine,
-      booklist: [{ type: Schema.Types.ObjectId, ref: 'Book' }]
+      booklist: req.body.book_id
     }
   })
 }
