@@ -3,7 +3,9 @@ var Book = require('../models/book')
 
 var getAll = (req, res) => {
   Transaction.find()
-  .populate('booklist', 'title')
+  // {path:'books', select:'title pages'}
+  // .populate({path:'booklist', select:'title author'})
+  .populate('booklist', 'title author category')
   .exec()
   .then(trans => res.json(trans))
   .catch(err => res.status(500).json(err))
