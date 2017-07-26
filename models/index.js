@@ -11,6 +11,8 @@ var books = new schema({
   author: String,
   category: String,
   stock: Number
+},{
+  versionKey: false
 }) 
 
 
@@ -20,6 +22,8 @@ var customers = new schema({
   address: String,
   zipcode: String,
   phone: String 
+},{
+  versionKey: false
 })
 
 var transactions = new schema({
@@ -36,6 +40,8 @@ var transactions = new schema({
     type: schema.Types.ObjectId,
     ref: 'Book'
   }] 
+}, {
+  versionKey: false
 })
 
 var booksModel = mongoose.model('Book', books);
