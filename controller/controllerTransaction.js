@@ -1,6 +1,7 @@
 'use strict'
 
 const Transaction = require('../models/Transaction');
+const Book  = require('../models/Book')
 
 function getAllTransactions(req,res){
   Transaction.find({})
@@ -83,7 +84,17 @@ function addBookToTransaction(req,res){
     }
   })
   .then(log=>{
-    res.send(log)
+    Book.findById(req.body.book_id)
+    .then(row =>{
+      Book.findOneAndUpdate({
+        _id: req.body.book_id
+      },{
+        stock: row.stock - 1
+      })
+      .then(log2=>{
+        res.send(log)
+      })
+    })
   })
   .catch(err=>{
     res.status(500).send(err)

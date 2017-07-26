@@ -3,11 +3,26 @@
 const mongoose = require('mongoose');
 
 const customerSchema = mongoose.Schema({
-  name: String,
-  memberid: String,
-  address: String,
-  zipcode: String,
-  phone: String
+  name: {
+    type:String,
+    required: true
+  },
+  memberid: {
+    type:String,
+    required: true
+  },
+  address: {
+    type:String,
+    required: true
+  },
+  zipcode: {
+    type:String,
+    required: true
+  },
+  phone: {
+    type:String,
+    required: true
+  }
 })
 
 const Customer = mongoose.model('Customer', customerSchema)
