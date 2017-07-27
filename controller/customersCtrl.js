@@ -1,11 +1,11 @@
 'use strict'
 
-const Books = require('../models/books')
+const Customers = require('../models/customers');
 
 
 // create
 exports.insert = (req, res) => {
-  Books.create(req.body, (err, r) => {
+  Customers.create(req.body, (err, r) => {
     if (!err) res.send(r);
     else res.status(500).send(err);
   });
@@ -14,14 +14,14 @@ exports.insert = (req, res) => {
 
 // read
 exports.findAll = (req, res) => {
-  Books.find({}, (err, r) => {
+  Customers.find({}, (err, r) => {
     if (!err) res.send(r);
-    else res.status(500).send(err)
+    else res.status(500).send(err);
   });
 };
 
 exports.findById = (req, res) => {
-  Books.findOne({_id : req.params.id}, (err, r) => {
+  Customers.findOne({_id : req.params.id}, (err, r) => {
     if (!err) res.send(r);
     else res.status(500).send(err);
   });
@@ -30,7 +30,7 @@ exports.findById = (req, res) => {
 
 // update
 exports.update = (req, res) => {
-  Books.findOneAndUpdate({_id : req.params.id}, req.body, (err, r) => {
+  Customers.findOneAndUpdate({_id : req.params.id}, req.body, (err, r) => {
     if (!err) res.send(r);
     else res.status(500).send(err);
   });
@@ -39,7 +39,7 @@ exports.update = (req, res) => {
 
 // delete
 exports.delete = (req, res) => {
-  Books.remove({_id : req.params.id}, (err, r) => {
+  Customers.remove({_id : req.params.id}, (err, r) => {
     if (!err) res.send(r);
     else res.status(500).send(err);
   });

@@ -8,7 +8,7 @@ const BooksSchema = new Schema({
   'author'   : String,
   'category' : String,
   'stock'    : Number
-})
+});
 
 const Books = mongoose.model('Books', BooksSchema);
 module.exports = Books;

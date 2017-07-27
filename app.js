@@ -13,10 +13,12 @@ app.use(bodyParser.json({ type : 'application/x-www-form-urlencoded'}));
 
 const index = require('./routes/index');
 const books = require('./routes/books');
+const customers = require('./routes/customers')
 
 
 app.use('/', index);
 app.use('/books', books);
+app.use('/customers', customers)
 
 
 // view engine setup
